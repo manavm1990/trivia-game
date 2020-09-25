@@ -6,6 +6,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "styled-components": "^5.2.0",
     "typography": "^0.16.19",
     "typography-theme-funston": "^0.16.19"
   },
@@ -52,5 +53,8 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

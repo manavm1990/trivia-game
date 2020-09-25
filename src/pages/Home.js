@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, Header, Main } from "components";
+import { Button, Card, Header, Main } from "components";
 
 const Home = () => (
   <>
@@ -22,6 +22,7 @@ const Home = () => (
           </span>
           %?
         </p>
+        <Button txt="begin" />
       </Card>
     </Main>
   </>

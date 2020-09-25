@@ -8,6 +8,13 @@ const GlobalStyle = createGlobalStyle`
     --secondary-color: #4E8397;
     --tertiary-color: #D5CABD;
   }
+
+  header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+  }
 `;
 
 const Layout = () => <GlobalStyle />;

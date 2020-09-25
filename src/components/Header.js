@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const Header = ({ txt }) => <h1>{txt}</h1>;
+const Header = ({ txt }) => (
+  <header>
+    <h1>{txt}</h1>
+  </header>
+);
 
 Header.propTypes = { txt: PropTypes.string };
 

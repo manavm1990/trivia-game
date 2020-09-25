@@ -12,7 +12,16 @@
     "build": "react-scripts build"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "airbnb",
+      "eslint-config-airbnb/hooks",
+      "prettier",
+      "prettier/react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": 0
+    }
   },
   "browserslist": {
     "production": [

@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
     --tertiary-color: #D5CABD;
   }
 
+  body {
+    background-color: #333;
+  }
   header {
     background-color: var(--primary-color);
     color: white;

@@ -12,11 +12,40 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: #333;
   }
+
+  header,
+  section {
+    color: white;
+    text-align: center;
+  }
+
   header {
     background-color: var(--primary-color);
-    color: white;
     padding: 0.5rem;
-    text-align: center;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vmin;
+  }
+  
+  section {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    min-height: 50vmin;
+    max-width: 768px;
+    padding: 1.5rem;
+    width: 100vw;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 `;
 

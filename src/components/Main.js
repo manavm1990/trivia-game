@@ -3,6 +3,6 @@ import React from "react";
 
 const Main = ({ children }) => <main>{children}</main>;
 
-Main.propTypes = { children: PropTypes.arrayOf(PropTypes.node).isRequired };
+Main.propTypes = { children: PropTypes.element.isRequired };
 
 export default Main;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Card, Header, Main } from "components";
+import { LinkBtn, Card, Header, Main } from "components";
 
 const Home = () => (
   <>
@@ -22,7 +22,7 @@ const Home = () => (
           </span>
           %?
         </p>
-        <Button success txt="begin" />
+        <LinkBtn route="/quiz" txt="begin" />
       </Card>
     </Main>
   </>

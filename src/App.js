@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Layout } from "./components";
+import { Layout, Footer } from "./components";
 
 import { Home } from "./pages";
 
@@ -8,6 +8,7 @@ const App = () => (
   <>
     <Layout />
     <Home />
+    <Footer />
   </>
 );
 

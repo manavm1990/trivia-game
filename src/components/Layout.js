@@ -11,41 +11,52 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #333;
+    color: white;
   }
 
   header,
-  section {
-    color: white;
+  section,
+  footer {
     text-align: center;
   }
 
-  header {
+  header, footer {
     background-color: var(--primary-color);
+  }
+
+  header {
     padding: 0.5rem;
   }
 
-  h1 {
+  h1,
+  h2 {
     font-weight: bold;
-  }
-
-  main {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 10vmin;
   }
   
   section {
     background-color: var(--secondary-color);
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
     min-height: 50vmin;
     max-width: 768px;
-    padding: 1.5rem;
+    padding: 2rem 1rem;
     width: 100vw;
   }
 
   p:last-child {
     margin-bottom: 0;
+  }
+
+  footer {
+    padding: 1rem 0.5rem;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
   }
 `;
 

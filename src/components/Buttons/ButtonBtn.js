@@ -3,14 +3,13 @@ import React from "react";
 
 import styled, { css } from "styled-components";
 
+import styles from "./shared-styles";
+
 const ButtonContainer = styled.button`
    {
-    background: #B00020;
-    border: none;
-    border-radius: 4px;
+    ${styles}
+    background: #B00020;  
     color: white;
-    min-height: 48px;
-    text-transform: uppercase;
 
     ${({ success }) =>
       success &&

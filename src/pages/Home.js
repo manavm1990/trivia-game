@@ -22,7 +22,7 @@ const Home = () => (
           </span>
           %?
         </p>
-        <Button txt="begin" />
+        <Button success txt="begin" />
       </Card>
     </Main>
   </>

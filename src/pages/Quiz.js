@@ -79,7 +79,6 @@ const Quiz = () => {
         question: activeQuestion.question,
         correctAnswer: activeQuestion.correct_answer,
         result:
-          // TODO: Add developer's note
           textContent.toLowerCase() ===
           activeQuestion.correct_answer.toLowerCase(),
       })

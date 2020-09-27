@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    min-height: 50vh;
     justify-content: center;
     max-width: 768px;
     padding: 2rem 1rem;

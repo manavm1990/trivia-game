@@ -2,6 +2,9 @@ import React, { useEffect, useReducer } from "react";
 
 import { Header, Main } from "components";
 
+import nprogress from "nprogress";
+import "nprogress/nprogress.css";
+
 import api from "api";
 
 const quizAPI = api();
@@ -20,8 +23,15 @@ const Quiz = () => {
 
   useEffect(() => {
     (async () => {
-      const { results } = await (await quizAPI.index()).json();
-      dispatch({ quizState: results, type: "init" });
+      try {
+        nprogress.start();
+        const { results } = await (await quizAPI.index()).json();
+        dispatch({ quizState: results, type: "init" });
+      } catch (err) {
+        console.error(err);
+      } finally {
+        nprogress.done();
+      }
     })();
   }, []);
 

@@ -10,6 +10,7 @@ const ButtonContainer = styled.button`
     ${styles}
     background: #B00020;  
     color: white;
+    outline: none;
 
     ${({ success }) =>
       success &&

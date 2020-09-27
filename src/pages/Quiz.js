@@ -23,7 +23,7 @@ const ButtonsContainer = styled.div`
 const FooterContainer = styled.footer`
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter */
   filter: hue-rotate(90deg);
-  margin: 1rem 0;
+  margin-top: 1rem;
 `;
 
 const Quiz = () => {

@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
-  header, footer {
+  header {
     background-color: var(--primary-color);
   }
 
@@ -50,10 +50,6 @@ const GlobalStyle = createGlobalStyle`
 
   p:last-child {
     margin-bottom: 0;
-  }
-
-  footer {
-    padding: 1rem 0.5rem;
   }
 
   #root {

@@ -66,6 +66,15 @@ const Quiz = () => {
               <ButtonBtn success txt="true" clickHandler={handleClick} />
               <ButtonBtn txt="false" clickHandler={handleClick} />
             </ButtonsContainer>
+
+            <FooterContainer>
+              <small>
+                <span role="img" aria-label="information-source">
+                  ℹ️
+                </span>{" "}
+                Question {activeQuestionIndex + 1} of {quiz.length}
+              </small>
+            </FooterContainer>
           </Card>
         ) : (
           <Card heading="⏳">

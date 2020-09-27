@@ -64,6 +64,16 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 0;
   }
 
+  ul {
+    margin: 0;
+    text-align: left;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 1.25rem 0;
+  }
+
   #root {
     display: flex;
     flex-direction: column;

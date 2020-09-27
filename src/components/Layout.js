@@ -42,10 +42,20 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    min-height: 50vmin;
+    height: 50vh;
+    justify-content: center;
     max-width: 768px;
     padding: 2rem 1rem;
     width: 100vw;
+  }
+
+  ${"" /* 'min-heights' should prevent 'button jumping,' for the most part. */}
+  section h2 {
+    min-height: 20%;
+  }
+
+  section p {
+    min-height: 25%;
   }
 
   p:last-child {

@@ -22,6 +22,11 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
+  header,
+  footer {
+    width: 100vw;
+  }
+
   header {
     background-color: var(--primary-color);
     padding: 0.5rem;
@@ -36,16 +41,24 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  section {
+  main, section {
+    margin: 0 auto;
+  }
+  
+  main {
     background-color: var(--secondary-color);
+    width: 100vw;
+  }
+
+  section {
+    align-items: center;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    min-height: 50vh;
     justify-content: center;
+    min-height: 40vh;
     max-width: 768px;
     padding: 2rem 1rem;
-    width: 100vw;
   }
 
   ${"" /* 'min-heights' should prevent 'button jumping,' for the most part. */}
@@ -75,6 +88,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
+    align-items: center;
     display: flex;
     flex-direction: column;
     height: 100vh;

@@ -17,6 +17,7 @@ const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  max-width: 192px;
   width: 80%;
 `;
 

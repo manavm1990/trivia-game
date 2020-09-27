@@ -10,6 +10,7 @@ const ButtonContainer = styled.button`
     ${styles}
     background: var(--error-color);  
     color: white;
+    cursor: pointer;
     outline: none;
 
     ${({ success }) =>

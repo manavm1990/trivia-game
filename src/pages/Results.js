@@ -9,7 +9,7 @@ import { Card, LinkBtn, Main } from "components";
 const LI = styled.li`
   background: var(--error-color);
   display: flex;
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem;
 
   ${({ result }) =>
     /* 😠 This is kind of stupid that I have to convert it to a string to avoid getting warnings in 'styled components.' */

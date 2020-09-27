@@ -49,8 +49,8 @@ const Quiz = () => {
 
   const activeQuestion = quiz[activeQuestionIndex];
 
-  const handleClick = () => {
-    console.log("click");
+  const handleClick = ({ target: { textContent } }) => {
+    console.log(textContent);
   };
 
   return (

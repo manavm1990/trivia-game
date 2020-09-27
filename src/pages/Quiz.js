@@ -52,12 +52,17 @@ const Quiz = () => {
           }))
         );
       } catch (err) {
-        console.error(err);
+        history.push("/error", {
+          error: new Error(`
+          Error fetching ❓ data 😞! 
+          ${err}
+          `),
+        });
       } finally {
         nprogress.done();
       }
     })();
-  }, []);
+  }, [history]);
 
   useEffect(() => {
     if (activeQuestionIndex && activeQuestionIndex === quiz.length) {

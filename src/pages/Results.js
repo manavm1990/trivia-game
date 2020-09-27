@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import styled, { css } from "styled-components";
 
@@ -27,17 +27,20 @@ const LI = styled.li`
 `;
 
 const Results = () => {
-  const {
-    state: { scoreResults },
-  } = useLocation();
+  const history = useHistory();
+  const { state } = useLocation();
 
-  const score = scoreResults.filter(({ result }) => result).length;
+  if (!state) {
+    history.push("/");
+  }
+
+  const score = state?.scoreResults.filter(({ result }) => result).length;
 
   return (
     <Main>
-      <Card heading={`You Scored ${score} / ${scoreResults.length}`}>
+      <Card heading={`You Scored ${score} / ${state?.scoreResults.length}`}>
         <ul>
-          {scoreResults.map(({ question, correctAnswer, result }, i) => (
+          {state?.scoreResults.map(({ question, correctAnswer, result }, i) => (
             <LI key={i} result={result.toString()}>
               <span>{result ? "➕" : "➖"}</span>
               {question} (Correct Answer: {correctAnswer})

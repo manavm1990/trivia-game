@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
-import { ButtonBtn, Card, Header, Loader, Main } from "components";
+import { ButtonBtn, Card, Loader, Main } from "components";
 
 import styled from "styled-components";
 
@@ -32,6 +33,8 @@ const Quiz = () => {
   const [quiz, setQuiz] = useState([]);
   const [scoreResults, setScoreResults] = useState([]);
 
+  const history = useHistory();
+
   useEffect(() => {
     (async () => {
       try {
@@ -53,12 +56,19 @@ const Quiz = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    if (activeQuestionIndex && activeQuestionIndex === quiz.length) {
+      history.push("/results", { scoreResults });
+    }
+  });
+
   const activeQuestion = quiz[activeQuestionIndex];
 
   const handleClick = ({ target: { textContent } }) => {
     setScoreResults((prev) =>
       prev.concat({
-        question: activeQuestion,
+        // Just need the text - not all of the deets!
+        question: activeQuestion.question,
         result:
           // TODO: Add developer's note
           textContent.toLowerCase() ===
@@ -69,34 +79,31 @@ const Quiz = () => {
   };
 
   return (
-    <>
-      <Header />
-      <Main>
-        {quiz.length ? (
-          <Card heading={activeQuestion.category}>
-            <p>{decodeCharCodes(activeQuestion.question)}</p>
+    <Main>
+      {quiz.length && activeQuestionIndex !== quiz.length ? (
+        <Card heading={activeQuestion.category}>
+          <p>{activeQuestion.question}</p>
 
-            <ButtonsContainer>
-              <ButtonBtn success txt="true" clickHandler={handleClick} />
-              <ButtonBtn txt="false" clickHandler={handleClick} />
-            </ButtonsContainer>
+          <ButtonsContainer>
+            <ButtonBtn success txt="true" clickHandler={handleClick} />
+            <ButtonBtn txt="false" clickHandler={handleClick} />
+          </ButtonsContainer>
 
-            <FooterContainer>
-              <small>
-                <span role="img" aria-label="information-source">
-                  ℹ️
-                </span>{" "}
-                Question {activeQuestionIndex + 1} of {quiz.length}
-              </small>
-            </FooterContainer>
-          </Card>
-        ) : (
-          <Card heading="⏳">
-            <Loader />
-          </Card>
-        )}
-      </Main>
-    </>
+          <FooterContainer>
+            <small>
+              <span role="img" aria-label="information-source">
+                ℹ️
+              </span>{" "}
+              Question {activeQuestionIndex + 1} of {quiz.length}
+            </small>
+          </FooterContainer>
+        </Card>
+      ) : (
+        <Card heading="⏳">
+          <Loader />
+        </Card>
+      )}
+    </Main>
   );
 };
 

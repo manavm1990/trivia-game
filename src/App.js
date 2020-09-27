@@ -2,7 +2,7 @@ import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { Layout, Footer } from "./components";
+import { Footer, Header, Layout } from "./components";
 
 import { Home, Quiz } from "./pages";
 
@@ -10,6 +10,7 @@ const App = () => (
   <Router>
     <Layout />
 
+    <Header />
     <Switch>
       <Route exact path="/">
         <Home />

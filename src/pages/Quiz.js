@@ -25,6 +25,10 @@ const FooterContainer = styled.footer`
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter */
   filter: hue-rotate(90deg);
   margin-top: 1rem;
+
+  p {
+    margin: 0.5rem 0;
+  }
 `;
 
 const Quiz = () => {
@@ -94,6 +98,7 @@ const Quiz = () => {
                 ℹ️
               </span>{" "}
               Question {activeQuestionIndex + 1} of {quiz.length}
+              <p>Score will be shown at the end.</p>
             </small>
           </FooterContainer>
         </Card>

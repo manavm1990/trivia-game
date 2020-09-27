@@ -3,6 +3,8 @@ import React from "react";
 
 import styled, { css } from "styled-components";
 
+import { motion } from "framer-motion";
+
 import styles from "./shared-styles";
 
 const ButtonContainer = styled.button`
@@ -20,10 +22,23 @@ const ButtonContainer = styled.button`
     `}
 `;
 
+const variants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.1 },
+  pressed: { scale: 0.95 },
+};
+
 const Button = ({ clickHandler, success, txt }) => (
-  <ButtonContainer success={success} onClick={clickHandler} type="button">
-    {txt}
-  </ButtonContainer>
+  <motion.div
+    variants={variants}
+    initial="rest"
+    whileHover="hover"
+    whileTap="pressed"
+  >
+    <ButtonContainer success={success} onClick={clickHandler} type="button">
+      {txt}
+    </ButtonContainer>
+  </motion.div>
 );
 
 Button.defaultProps = {

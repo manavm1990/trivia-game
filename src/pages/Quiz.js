@@ -33,8 +33,6 @@ const Quiz = () => {
   const [quiz, dispatch] = useReducer(reducer, []);
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
 
-  const activeQuestion = quiz[activeQuestionIndex];
-
   useEffect(() => {
     (async () => {
       try {
@@ -48,6 +46,8 @@ const Quiz = () => {
       }
     })();
   }, []);
+
+  const activeQuestion = quiz[activeQuestionIndex];
 
   const handleClick = () => {
     console.log("click");

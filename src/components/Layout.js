@@ -71,6 +71,9 @@ const GlobalStyle = createGlobalStyle`
 
   li {
     list-style-type: none;
+  }
+
+  li:not(:first-child) {
     margin: 1.25rem 0;
   }
 

@@ -6,3 +6,5 @@ export { default as Card } from "./Card";
 export { default as Footer } from "./Footer";
 
 export { ButtonBtn, LinkBtn } from "./Buttons";
+
+export { default as Loader } from "./Loader";

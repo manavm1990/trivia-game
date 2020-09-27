@@ -1,6 +1,6 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 
-import { Header, Main } from "components";
+import { Card, Header, Loader, Main } from "components";
 
 import nprogress from "nprogress";
 import "nprogress/nprogress.css";
@@ -19,7 +19,10 @@ function reducer(state, action) {
 }
 
 const Quiz = () => {
-  const [_, dispatch] = useReducer(reducer, []);
+  const [quiz, dispatch] = useReducer(reducer, []);
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+
+  const activeQuestion = quiz[activeQuestionIndex];
 
   useEffect(() => {
     (async () => {
@@ -39,7 +42,15 @@ const Quiz = () => {
     <>
       <Header />
       <Main>
-        <p>Fat!</p>
+        {quiz.length ? (
+          <Card heading={activeQuestion.category}>
+            <p>{activeQuestion.question}</p>
+          </Card>
+        ) : (
+          <Card heading="⏳">
+            <Loader />
+          </Card>
+        )}
       </Main>
     </>
   );

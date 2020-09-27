@@ -33,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bold;
   }
   
+  a {
+    text-decoration: none;
+  }
+
   section {
     background-color: var(--secondary-color);
     border-radius: 4px;

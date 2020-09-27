@@ -16,7 +16,6 @@ const LinkContainer = styled(Link)`
     color: #333;
     display: flex;
     justify-content: center;
-    text-decoration: none;
   }
 `;
 

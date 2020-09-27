@@ -8,14 +8,14 @@ import styles from "./shared-styles";
 const ButtonContainer = styled.button`
    {
     ${styles}
-    background: #B00020;  
+    background: var(--error-color);  
     color: white;
     outline: none;
 
     ${({ success }) =>
       success &&
       css`
-        background: #03dac6;
+        background: var(--success-color);
         color: #333;
       `}
 `;

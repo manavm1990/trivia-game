@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
     --primary-color: #845EC2;
     --secondary-color: #4E8397;
     --tertiary-color: #D5CABD;
+    --success-color: #03DAC6;
+    --error-color: #B00020;
   }
 
   body {

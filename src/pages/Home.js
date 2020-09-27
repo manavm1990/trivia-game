@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LinkBtn, Card, Main } from "components";
+import { Card, LinkBtn, Main } from "components";
 
 const Home = () => (
   <Main>

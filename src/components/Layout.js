@@ -24,9 +24,6 @@ const GlobalStyle = createGlobalStyle`
 
   header {
     background-color: var(--primary-color);
-  }
-
-  header {
     padding: 0.5rem;
   }
 

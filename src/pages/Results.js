@@ -35,7 +35,7 @@ const Results = () => {
 
   return (
     <Main>
-      <Card heading={`You Scored ${score}/${scoreResults.length}`}>
+      <Card heading={`You Scored ${score} / ${scoreResults.length}`}>
         <ul>
           {scoreResults.map(({ question, result }, i) => (
             <LI key={i} result={result.toString()}>

@@ -1,11 +1,20 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 const Card = ({ children, heading }) => (
-  <section>
-    <h2>{heading}</h2>
-    {children}
-  </section>
+  <motion.div initial="hidden" animate="visible" variants={variants}>
+    <section>
+      <h2>{heading}</h2>
+      {children}
+    </section>
+  </motion.div>
 );
 
 Card.propTypes = {

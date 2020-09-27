@@ -8,6 +8,7 @@ import nprogress from "nprogress";
 import "nprogress/nprogress.css";
 
 import api from "api";
+import { decodeCharCodes } from "utils";
 
 const quizAPI = api();
 
@@ -66,8 +67,7 @@ const Quiz = () => {
       <Main>
         {quiz.length ? (
           <Card heading={activeQuestion.category}>
-            {/* TODO: 'Convert' character codes! */}
-            <p>{activeQuestion.question}</p>
+            <p>{decodeCharCodes(activeQuestion.question)}</p>
 
             <ButtonsContainer>
               <ButtonBtn success txt="true" clickHandler={handleClick} />

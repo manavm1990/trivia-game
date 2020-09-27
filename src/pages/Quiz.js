@@ -14,12 +14,10 @@ import { decodeCharCodes } from "utils";
 const quizAPI = api();
 
 const ButtonsContainer = styled.div`
-   {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 80%;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
 `;
 
 const FooterContainer = styled.footer`

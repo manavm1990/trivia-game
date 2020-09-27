@@ -5,10 +5,8 @@ import styled from "styled-components";
 const date = new Date();
 
 const FooterContainer = styled.footer`
-   {
-    background-color: var(--primary-color);
-    padding: 1rem 0.5rem;
-  }
+  background-color: var(--primary-color);
+  padding: 1rem 0.5rem;
 `;
 
 const Footer = () => (

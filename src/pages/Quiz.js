@@ -55,6 +55,7 @@ const Quiz = () => {
       <Main>
         {quiz.length ? (
           <Card heading={activeQuestion.category}>
+            {/* TODO: 'Convert' character codes! */}
             <p>{activeQuestion.question}</p>
 
             <ButtonsContainer>

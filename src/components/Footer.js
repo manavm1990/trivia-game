@@ -11,7 +11,16 @@ const FooterContainer = styled.footer`
 
 const Footer = () => (
   <FooterContainer>
-    <p>&copy; {date.getFullYear()} Trivia Game! by CodeFinity</p>
+    <p>
+      &copy; {date.getFullYear()} Trivia Game! by{" "}
+      <a
+        href="https://twitter.com/GoCodeFinity"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CodeFinity
+      </a>
+    </p>
   </FooterContainer>
 );
 

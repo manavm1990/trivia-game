@@ -39,6 +39,12 @@ const GlobalStyle = createGlobalStyle`
   
   a {
     text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:focus,
+  a:hover {
+    color: inherit;
   }
 
   main, section {

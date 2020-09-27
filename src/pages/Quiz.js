@@ -37,7 +37,14 @@ const Quiz = () => {
       try {
         nprogress.start();
         const { results } = await (await quizAPI.index()).json();
-        setQuiz(results);
+        setQuiz(
+          results.map((result) => ({
+            ...result,
+
+            // 'Clean up' 🧹 the question text!
+            question: decodeCharCodes(result.question),
+          }))
+        );
       } catch (err) {
         console.error(err);
       } finally {

@@ -1,6 +1,8 @@
 import React, { useEffect, useReducer, useState } from "react";
 
-import { Card, Header, Loader, Main } from "components";
+import { ButtonBtn, Card, Header, Loader, Main } from "components";
+
+import styled from "styled-components";
 
 import nprogress from "nprogress";
 import "nprogress/nprogress.css";
@@ -17,6 +19,15 @@ function reducer(state, action) {
       throw new Error("🙅🏽‍♂️ Illegal action!");
   }
 }
+
+const ButtonsContainer = styled.div`
+   {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+  }
+`;
 
 const Quiz = () => {
   const [quiz, dispatch] = useReducer(reducer, []);
@@ -45,6 +56,11 @@ const Quiz = () => {
         {quiz.length ? (
           <Card heading={activeQuestion.category}>
             <p>{activeQuestion.question}</p>
+
+            <ButtonsContainer>
+              <ButtonBtn success txt="true" />
+              <ButtonBtn txt="false" />
+            </ButtonsContainer>
           </Card>
         ) : (
           <Card heading="⏳">

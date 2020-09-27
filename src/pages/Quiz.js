@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { ButtonBtn, Card, Header, Loader, Main } from "components";
 
@@ -11,15 +11,6 @@ import api from "api";
 
 const quizAPI = api();
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "init":
-      return state.concat(action.quizState);
-    default:
-      throw new Error("🙅🏽‍♂️ Illegal action!");
-  }
-}
-
 const ButtonsContainer = styled.div`
    {
     display: flex;
@@ -29,16 +20,23 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const FooterContainer = styled.footer`
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter */
+  filter: hue-rotate(90deg);
+  margin: 1rem 0;
+`;
+
 const Quiz = () => {
-  const [quiz, dispatch] = useReducer(reducer, []);
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+  const [quiz, setQuiz] = useState([]);
+  const [scoreResults, setScoreResults] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
         nprogress.start();
         const { results } = await (await quizAPI.index()).json();
-        dispatch({ quizState: results, type: "init" });
+        setQuiz(results);
       } catch (err) {
         console.error(err);
       } finally {
@@ -50,7 +48,16 @@ const Quiz = () => {
   const activeQuestion = quiz[activeQuestionIndex];
 
   const handleClick = ({ target: { textContent } }) => {
-    console.log(textContent);
+    setScoreResults((prev) =>
+      prev.concat({
+        question: activeQuestion,
+        result:
+          // TODO: Add developer's note
+          textContent.toLowerCase() ===
+          activeQuestion.correct_answer.toLowerCase(),
+      })
+    );
+    setActiveQuestionIndex((prev) => prev + 1);
   };
 
   return (

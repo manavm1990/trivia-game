@@ -19,8 +19,8 @@ const ButtonContainer = styled.button`
       `}
 `;
 
-const Button = ({ success, txt }) => (
-  <ButtonContainer success={success} type="button">
+const Button = ({ clickHandler, success, txt }) => (
+  <ButtonContainer success={success} onClick={clickHandler} type="button">
     {txt}
   </ButtonContainer>
 );
@@ -30,6 +30,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
   success: PropTypes.bool,
   txt: PropTypes.string.isRequired,
 };

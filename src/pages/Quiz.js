@@ -49,6 +49,10 @@ const Quiz = () => {
     })();
   }, []);
 
+  const handleClick = () => {
+    console.log("click");
+  };
+
   return (
     <>
       <Header />
@@ -59,8 +63,8 @@ const Quiz = () => {
             <p>{activeQuestion.question}</p>
 
             <ButtonsContainer>
-              <ButtonBtn success txt="true" />
-              <ButtonBtn txt="false" />
+              <ButtonBtn success txt="true" clickHandler={handleClick} />
+              <ButtonBtn txt="false" clickHandler={handleClick} />
             </ButtonsContainer>
           </Card>
         ) : (

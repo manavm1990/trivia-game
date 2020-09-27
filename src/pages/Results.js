@@ -37,10 +37,10 @@ const Results = () => {
     <Main>
       <Card heading={`You Scored ${score} / ${scoreResults.length}`}>
         <ul>
-          {scoreResults.map(({ question, result }, i) => (
+          {scoreResults.map(({ question, correctAnswer, result }, i) => (
             <LI key={i} result={result.toString()}>
               <span>{result ? "➕" : "➖"}</span>
-              {question}
+              {question} (Correct Answer: {correctAnswer})
             </LI>
           ))}
         </ul>

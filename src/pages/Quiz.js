@@ -72,6 +72,7 @@ const Quiz = () => {
       prev.concat({
         // Just need the text - not all of the deets!
         question: activeQuestion.question,
+        correctAnswer: activeQuestion.correct_answer,
         result:
           // TODO: Add developer's note
           textContent.toLowerCase() ===

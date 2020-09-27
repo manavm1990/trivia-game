@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Footer, Header, Layout } from "./components";
 
-import { Home, Quiz, Results } from "./pages";
+import { Error, Home, Quiz, Results } from "./pages";
 
 const App = () => (
   <Router>
@@ -22,6 +22,10 @@ const App = () => (
 
       <Route exact path="/results">
         <Results />
+      </Route>
+
+      <Route exact path="/error">
+        <Error />
       </Route>
     </Switch>
 

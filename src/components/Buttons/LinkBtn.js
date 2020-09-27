@@ -8,15 +8,13 @@ import styled from "styled-components";
 import styles from "./shared-styles";
 
 const LinkContainer = styled(Link)`
-   {
-    ${styles}
+  ${styles}
 
-    align-items: center;
-    background: #ff8800;
-    color: #333;
-    display: flex;
-    justify-content: center;
-  }
+  align-items: center;
+  background: #ff8800;
+  color: #333;
+  display: flex;
+  justify-content: center;
 `;
 
 const LinkBtn = ({ route, txt }) => (

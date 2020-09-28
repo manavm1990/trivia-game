@@ -47,7 +47,7 @@ const Results = () => {
         ))}
       </ul>
 
-      <LinkBtn route="/" txt="Play Again?" />
+      <LinkBtn route="/quiz" txt="Play Again?" />
     </Card>
   );
 };

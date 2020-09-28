@@ -4,7 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 
 import styled, { css } from "styled-components";
 
-import { Card, LinkBtn, Main } from "components";
+import { Card, LinkBtn } from "components";
 
 const LI = styled.li`
   background: var(--error-color);
@@ -37,20 +37,18 @@ const Results = () => {
   const score = state?.scoreResults.filter(({ result }) => result).length;
 
   return (
-    <Main>
-      <Card heading={`You Scored ${score} / ${state?.scoreResults.length}`}>
-        <ul>
-          {state?.scoreResults.map(({ question, correctAnswer, result }, i) => (
-            <LI key={i} result={result.toString()}>
-              <span>{result ? "➕" : "➖"}</span>
-              {question} (Correct Answer: {correctAnswer})
-            </LI>
-          ))}
-        </ul>
+    <Card heading={`You Scored ${score} / ${state?.scoreResults.length}`}>
+      <ul>
+        {state?.scoreResults.map(({ question, correctAnswer, result }, i) => (
+          <LI key={i} result={result.toString()}>
+            <span>{result ? "➕" : "➖"}</span>
+            {question} (Correct Answer: {correctAnswer})
+          </LI>
+        ))}
+      </ul>
 
-        <LinkBtn route="/" txt="Play Again?" />
-      </Card>
-    </Main>
+      <LinkBtn route="/" txt="Play Again?" />
+    </Card>
   );
 };
 

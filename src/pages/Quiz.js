@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { ButtonBtn, Card, Loader, Main } from "components";
+import { ButtonBtn, Card, Loader } from "components";
 
 import styled from "styled-components";
 
@@ -86,33 +86,29 @@ const Quiz = () => {
     setActiveQuestionIndex((prev) => prev + 1);
   };
 
-  return (
-    <Main>
-      {quiz.length && activeQuestionIndex !== quiz.length ? (
-        <Card heading={activeQuestion.category}>
-          <p>{activeQuestion.question}</p>
+  return quiz.length && activeQuestionIndex !== quiz.length ? (
+    <Card heading={activeQuestion.category}>
+      <p>{activeQuestion.question}</p>
 
-          <ButtonsContainer>
-            <ButtonBtn success txt="true" clickHandler={handleClick} />
-            <ButtonBtn txt="false" clickHandler={handleClick} />
-          </ButtonsContainer>
+      <ButtonsContainer>
+        <ButtonBtn success txt="true" clickHandler={handleClick} />
+        <ButtonBtn txt="false" clickHandler={handleClick} />
+      </ButtonsContainer>
 
-          <FooterContainer>
-            <small>
-              <span role="img" aria-label="information-source">
-                ℹ️
-              </span>{" "}
-              Question {activeQuestionIndex + 1} of {quiz.length}
-              <p>Score will be shown at the end.</p>
-            </small>
-          </FooterContainer>
-        </Card>
-      ) : (
-        <Card heading="⏳">
-          <Loader />
-        </Card>
-      )}
-    </Main>
+      <FooterContainer>
+        <small>
+          <span role="img" aria-label="information-source">
+            ℹ️
+          </span>{" "}
+          Question {activeQuestionIndex + 1} of {quiz.length}
+          <p>Score will be shown at the end.</p>
+        </small>
+      </FooterContainer>
+    </Card>
+  ) : (
+    <Card heading="⏳">
+      <Loader />
+    </Card>
   );
 };
 

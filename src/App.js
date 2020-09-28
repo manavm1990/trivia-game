@@ -7,7 +7,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import { Footer, Header, Layout } from "./components";
+import { Footer, Header, Layout, Main } from "./components";
 
 import { Error, Home, Quiz, Results } from "./pages";
 
@@ -16,27 +16,29 @@ const App = () => (
     <Layout />
 
     <Header />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+    <Main>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      <Route exact path="/quiz">
-        <Quiz />
-      </Route>
+        <Route exact path="/quiz">
+          <Quiz />
+        </Route>
 
-      <Route exact path="/results">
-        <Results />
-      </Route>
+        <Route exact path="/results">
+          <Results />
+        </Route>
 
-      <Route exact path="/error">
-        <Error />
-      </Route>
+        <Route exact path="/error">
+          <Error />
+        </Route>
 
-      <Route>
-        <Redirect to="/error" />
-      </Route>
-    </Switch>
+        <Route>
+          <Redirect to="/error" />
+        </Route>
+      </Switch>
+    </Main>
 
     <Footer />
   </Router>

@@ -9,12 +9,10 @@ const variants = {
 };
 
 const Card = ({ children, heading }) => (
-  <motion.div initial="hidden" animate="visible" variants={variants}>
-    <section>
-      <h2>{heading}</h2>
-      {children}
-    </section>
-  </motion.div>
+  <motion.section initial="hidden" animate="visible" variants={variants}>
+    <h2>{heading}</h2>
+    {children}
+  </motion.section>
 );
 
 Card.propTypes = {

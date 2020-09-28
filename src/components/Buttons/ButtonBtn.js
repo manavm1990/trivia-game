@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import styles from "./shared-styles";
 
-const ButtonContainer = styled.button`
+const ButtonContainer = styled(motion.button)`
   ${styles}
   background: var(--error-color);
   color: white;
@@ -29,16 +29,17 @@ const variants = {
 };
 
 const Button = ({ clickHandler, success, txt }) => (
-  <motion.div
+  <ButtonContainer
+    success={success}
+    onClick={clickHandler}
+    type="button"
     variants={variants}
     initial="rest"
     whileHover="hover"
     whileTap="pressed"
   >
-    <ButtonContainer success={success} onClick={clickHandler} type="button">
-      {txt}
-    </ButtonContainer>
-  </motion.div>
+    {txt}
+  </ButtonContainer>
 );
 
 Button.defaultProps = {
